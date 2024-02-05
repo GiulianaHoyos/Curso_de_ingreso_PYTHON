@@ -33,9 +33,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        campo = "hola"
-        self.txt_nombre.delete(0,9999)
-        self.txt_nombre.insert(0,campo)
+        campo_prompt = prompt("ingresar","Ingrese su nombre")
+
+        self.txt_nombre.insert(0,campo_prompt)
         
     
 if __name__ == "__main__":

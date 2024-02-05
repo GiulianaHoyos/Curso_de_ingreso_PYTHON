@@ -48,7 +48,7 @@ class App(customtkinter.CTk):
         resultado = "El resultado de la suma es {}".format(cuenta)
         
         alert(title="UTN FRA",message= resultado)
-     
+        
         
 if __name__ == "__main__":
     app = App()

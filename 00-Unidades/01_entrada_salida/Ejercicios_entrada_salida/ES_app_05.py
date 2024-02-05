@@ -42,9 +42,8 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         Nombre= self.txt_nombre.get()
         Edad= self.txt_edad.get()
-        saludo = "Usted se llama " + Nombre
-        saludo1 = " y su edad es " + Edad
-        alert(title="UTN FRA", message= saludo + saludo1 )
+        saludo = "Usted se llama {} y su edad es {} años".format(Nombre,Edad)
+        alert(title="UTN FRA", message= saludo)
         
         
     
