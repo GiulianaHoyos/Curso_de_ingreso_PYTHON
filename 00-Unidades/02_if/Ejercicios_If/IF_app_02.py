@@ -38,11 +38,8 @@ class App(customtkinter.CTk):
         
         if edad_n >=18:
             alert(title="UTN FRA", message="MAYOR")
-            
 
-        
-        
-    
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
