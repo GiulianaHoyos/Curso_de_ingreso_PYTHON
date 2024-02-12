@@ -37,8 +37,8 @@ class App(customtkinter.CTk):
         sueldo_a_numero = float (sueldo)
         
         Calculo = sueldo_a_numero * 1.150
-         
-        textofinal = "Su sueldo incrementado un 15 % es {}".format(Calculo)
+        
+        textofinal = "Su sueldo incrementado un 15 % es: {}".format(Calculo)
         
         alert(title="UTN FRA",message=textofinal)
         

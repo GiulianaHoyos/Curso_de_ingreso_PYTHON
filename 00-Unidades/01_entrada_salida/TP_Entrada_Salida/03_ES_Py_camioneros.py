@@ -48,16 +48,19 @@ class App(customtkinter.CTk):
     def btn_cantidad_camiones_on_click(self):
         toneladas = self.txt_toneladas.get()
         toneladas_num = float (toneladas)
+        kilogramos = float (toneladas_num)
         
-        Cuenta = (toneladas_num * 1000) / 3500
-        RedondearArriba = math.ceil(Cuenta)
-        TextoFinal ="La cantidad de camiones que necesita para transportar son {}".format(RedondearArriba)
+        Cuenta_a_kg = kilogramos * 1000
+        Resultado = (Cuenta_a_kg) / 3500
+        RedondearArriba = math.ceil(Resultado)
+        TextoFinal ="La cantidad de camiones que necesita para transportar son: {}".format(RedondearArriba)
         
         alert(title="UTN FRA", message=TextoFinal)
 
     def btn_tiempo_llegada_on_click(self):
         kilometros = self.txt_kilometros.get()
         kilometros_num = float (kilometros)
+        
         
         Cuenta = kilometros_num / 90
         CuentaRedondeada = round(Cuenta,1)

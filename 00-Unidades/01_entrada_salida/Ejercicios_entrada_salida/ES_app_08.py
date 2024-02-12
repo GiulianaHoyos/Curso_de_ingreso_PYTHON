@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
         self.txt_operador_b = customtkinter.CTkEntry(master=self)
         self.txt_operador_b.grid(row=1, column=1)
         
-        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Calcular", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
@@ -46,7 +46,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int(operador_b_texto)
         
         resultado = operador_a_numero % operador_b_numero
-        textofinal = "El resto de dividir {} y {} es {}".format(operador_a_numero,operador_b_numero,resultado)
+        textofinal = "El resto de dividir {} por {} es: {}".format(operador_a_numero,operador_b_numero,resultado)
         
         alert(title="UTN FRA",message= textofinal)
         

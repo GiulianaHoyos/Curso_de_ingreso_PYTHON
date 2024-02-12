@@ -46,7 +46,7 @@ class App(customtkinter.CTk):
         
         resultado = (sueldo_a_numero / 100) * incremento_a_numero
         resultado_F = resultado + sueldo_a_numero
-        TextoFinal = "Su sueldo incrementado un {}% es {}".format(incremento_a_numero,resultado_F)
+        TextoFinal = "Su sueldo incrementado un {}% es: {}".format(incremento_a_numero,resultado_F)
         
         alert(title="UTN FRA",message=TextoFinal)
         

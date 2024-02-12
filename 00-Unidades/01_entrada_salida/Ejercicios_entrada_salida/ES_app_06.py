@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int(operador_b_texto)
         
         cuenta = operador_a_numero + operador_b_numero
-        resultado = "El resultado de la suma es {}".format(cuenta)
+        resultado = "El resultado de la suma es: {}".format(cuenta)
         
         alert(title="UTN FRA",message= resultado)
         

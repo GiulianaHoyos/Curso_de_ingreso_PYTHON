@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
         
         Resultado = Importe_numero * 0.20
         ResultadoFinal = Importe_numero - Resultado
-        TextoFinal = "Su valor con un 20% de descuento es {}".format(ResultadoFinal)
+        TextoFinal = "Su valor con un 20% de descuento es: {}".format(ResultadoFinal)
         
         alert(title="UTN FRA", message= TextoFinal)
 

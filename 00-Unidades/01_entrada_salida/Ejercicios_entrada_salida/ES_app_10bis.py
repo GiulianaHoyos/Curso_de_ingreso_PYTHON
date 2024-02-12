@@ -48,7 +48,7 @@ class App(customtkinter.CTk):
         
         Resultado = importe_numero - (importe_numero * descuento_numero / 100)
         
-        TextoResultado = "El importe {} con el {}% de descuento es {}".format(importe_numero,descuento_numero,Resultado)
+        TextoResultado = "El importe {} con el {}% de descuento es: {}".format(importe_numero,descuento_numero,Resultado)
         
         alert(title="UTN FRA",message= TextoResultado)
 

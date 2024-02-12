@@ -54,7 +54,7 @@ class App(customtkinter.CTk):
         Cuenta = (temperatura_C_num * 9/5) + 32
         TextoFinal = "{}°C son {}°F".format(temperatura_C_num,Cuenta)
         
-        alert(title="UTN FRA",message= Cuenta)
+        alert(title="UTN FRA",message= TextoFinal)
                 
     def btn_convertir_f_c_on_click(self):
         temperatura_F = self.txt_temperatura_f.get()
@@ -63,7 +63,7 @@ class App(customtkinter.CTk):
         Cuenta = (temperatura_F_num - 32) * 5/9
         TextoFinal = "{}°F son {}°C".format(temperatura_F_num,Cuenta)
         
-        alert(title="UTN FRA",message= Cuenta)
+        alert(title="UTN FRA",message= TextoFinal)
     
     
 if __name__ == "__main__":

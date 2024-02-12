@@ -56,7 +56,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int (operador_b_texto)
         
         resultado = operador_a_numero + operador_b_numero
-        textofinal = "el resultado de la suma es {}".format(resultado)
+        textofinal = "el resultado de la suma es: {}".format(resultado)
         
         alert(title="UTN FRA", message= textofinal)
         
@@ -69,7 +69,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int (operador_b_texto)
         
         resultado = operador_a_numero - operador_b_numero
-        textofinal = "el resultado de la resta es {}".format(resultado)
+        textofinal = "el resultado de la resta es: {}".format(resultado)
         
         alert(title="UTN FRA", message= textofinal)
 
@@ -81,7 +81,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int (operador_b_texto)
         
         resultado = operador_a_numero * operador_b_numero
-        textofinal = "el resultado de la multipicación es {}".format(resultado)
+        textofinal = "el resultado de la multipicación es: {}".format(resultado)
         
         alert(title="UTN FRA",message=textofinal)
 
@@ -93,7 +93,7 @@ class App(customtkinter.CTk):
         operador_b_numero = int (operador_b_texto)
         
         resultado = operador_a_numero / operador_b_numero
-        textofinal = "el resultado de la division es {}".format(resultado)
+        textofinal = "el resultado de la division es: {}".format(resultado)
         
         alert(title="UTN FRA",message=textofinal)
         
