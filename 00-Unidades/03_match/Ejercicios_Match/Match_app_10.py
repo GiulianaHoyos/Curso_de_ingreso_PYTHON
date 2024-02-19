@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Giuliana
+apellido:Hoyos
 ---
 Ejercicio: Match_10
 ---
@@ -47,9 +47,45 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
+        Estacion_seleccionada= self.combobox_estaciones.get()
+        Destino_elegido = self.combobox_destino.get()
+        
+        match Estacion_seleccionada:
+            case "Invierno":
+                match Destino_elegido:
+                    case "Bariloche":
+                        alert("UTN FRA", "Se viaja")
+                    case _:
+                        alert("UTN FRA","No se viaja")
+        match Estacion_seleccionada:
+            case "Verano":
+                match Destino_elegido:
+                    case "Mar del plata" | "Cataratas":
+                        alert("UTN FRA","Se viaja")
+                    case _:
+                        alert("UTN FRA","No se viaja")
+        match Estacion_seleccionada:
+            case "Otoño":
+                match Destino_elegido:
+                    case _:
+                        alert("UTN FRA","Se viaja")
+        match Estacion_seleccionada:
+            case "Primavera":
+                match Destino_elegido:
+                    case "Bariloche":
+                        alert("UTN FRA","No se viaja")
+                    case _:
+                        alert("UTN FRA","Se viaja")
     
+
+#Una agencia de viajes nos pide informar si hacemos viajes a lugares según la estación del año. 
+#En caso de hacerlo mostrar un alert con el mensaje “Se viaja”, 
+#caso contrario mostrar “No se viaja”. 
+    #Si es invierno: solo se viaja a Bariloche
+    #Si es verano: se viaja a Mar del plata y Cataratas
+    #Si es otoño: se viaja a todos los lugares
+    #Si es primavera: se viaja a todos los lugares menos Bariloche
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

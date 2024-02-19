@@ -4,10 +4,9 @@ from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
-
 '''
-nombre:
-apellido:
+nombre:Giuliana
+apellido:Hoyos
 ---
 Ejercicio: Match_05
 ---
@@ -35,8 +34,11 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-    
+        hora = int (self.txt_hora.get())
+        
+        match hora:
+            case 7 | 8 | 9 | 10 | 11:
+                alert("UTN FRA", "Es de mañana")
     
 if __name__ == "__main__":
     app = App()

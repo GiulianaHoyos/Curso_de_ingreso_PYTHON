@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Giuliana
+apellido:Hoyos
 ---
 TP: Iluminación
 ---
@@ -43,9 +43,45 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        valor_por_unidad = int (800)
+        marca_elegida = self.combobox_marca.get()
+        cantidad_elegida = int (self.combobox_cantidad.get())
         
-    
+        Precio_Total = int (valor_por_unidad * cantidad_elegida)
+        
+        match cantidad_elegida:
+            case 6 | 7 | 8 | 9 | 10 | 11 | 12:
+                Descuento = 50
+            case 5:
+                match marca_elegida:
+                    case "ArgentinaLuz":
+                        Descuento = 40
+                    case _:
+                        Descuento = 30
+            case 4:
+                match marca_elegida:
+                    case "ArgentinaLuz" | "FelipeLamparas":
+                        Descuento = 25
+                    case _:
+                        Descuento = 20
+            case 3:
+                match marca_elegida:
+                    case "ArgentinaLuz":
+                        Descuento = 15
+                    case "FelipeLamparas":
+                        Descuento = 10
+                    case _:
+                        Descuento = 5
+            case 1 | 2:
+                alert("UTN FRA", "Su total es ${}".format(Precio_Total))
+
+        Precio_Final = Precio_Total - ((Descuento / 100) * Precio_Total)
+        alert("UTN FRA","¡Llevando {} obtuvo un %{} de descuento! Su total es ${}".format(cantidad_elegida,Descuento,Precio_Final))
+
+        if Precio_Final > 4000:
+            Descuento_Adicional_Final = Precio_Final - ((5 / 100) * Precio_Final)
+            alert("UTN FRA", "¡Obtuvo un %5 mas de descuento por haber gastado más de $4000 pesos! Su total es {}".format(Descuento_Adicional_Final))
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

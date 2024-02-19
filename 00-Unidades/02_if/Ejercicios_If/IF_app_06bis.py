@@ -40,13 +40,13 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         altura = self.txt_altura.get()
-        altura_n = float (altura)
+        altura_n = int (altura)
         
-        if altura_n <=1.59:
+        if altura_n <=159:
             alert(title="UTN FRA",message="Base")
-        elif altura_n >=1.60 and altura_n <=1.79:
+        elif altura_n >=160 and altura_n <=179:
             alert(title="UTN FRA",message="Escolta")
-        elif altura_n >= 1.80 and altura_n <= 1.99:
+        elif altura_n >= 180 and altura_n <= 199:
             alert(title="UTN FRA",message="Alero")
         else:
             alert(title="UTN FRA",message="Ala-Pívot o Pívot")

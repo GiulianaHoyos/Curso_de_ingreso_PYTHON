@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre:Giuliana
+apellido:Hoyos
 ---
 Ejercicio: Match_09
 ---
@@ -57,9 +57,50 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
-    
+        Estacion_seleccionada = self.combobox_estaciones.get()
+        Destino_elegido = self.combobox_destino.get()
+        Viaje = int (15000)
+        
+        match Estacion_seleccionada:
+            case "Invierno":
+                match Destino_elegido:
+                    case "Bariloche":
+                        Aumento = 20
+                        Calculo_Incremento = Viaje + ((Aumento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Incremento))
+                    case "Cataratas" | "Cordoba":
+                        Descuento = 10
+                        Calculo_Descuento = Viaje - ((Descuento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Descuento))
+                    case "Mar del plata":
+                        Descuento = 20
+                        Calculo_Descuento = Viaje - ((Descuento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Descuento))
+                    
+            case "Verano":
+                match Destino_elegido:
+                    case "Bariloche":
+                        Descuento = 20
+                        Calculo_Descuento = Viaje - ((Descuento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Descuento))
+                    case "Cataratas" | "Cordoba":
+                        Aumento = 10
+                        Calculo_Incremento = Viaje + ((Aumento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Incremento))
+                    case "Mar del plata":
+                        Aumento = 20
+                        Calculo_Incremento = Viaje + ((Aumento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Incremento))
+                    
+            case "Primavera" | "Otoño":
+                match Destino_elegido:
+                    case "Bariloche" | "Cataratas" | "Mar del plata":
+                        Aumento = 10
+                        Calculo_Incremento = Viaje + ((Aumento / 100)* Viaje)
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Calculo_Incremento))
+                    case "Cordoba":
+                        alert("UTN FRA", "Su viaje a {} en {} vale ${}".format(Destino_elegido, Estacion_seleccionada,Viaje))
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

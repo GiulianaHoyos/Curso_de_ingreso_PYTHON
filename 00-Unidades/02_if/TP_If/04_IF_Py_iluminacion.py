@@ -50,61 +50,35 @@ class App(customtkinter.CTk):
         Precio_total = valor_unidad * cantidad_elegida
         
         if cantidad_elegida >= 6:
-            #descuento 50%
-            Descuento = Precio_total * 0.50
-            #muestro total
-            Valor_con_Descuento = Precio_total - Descuento
-            alert(title= "UTN FRA",message= "¡Comprando {} lamparitas obtuvo un 50% de descuento! Su total es ${}".format(cantidad_elegida,Valor_con_Descuento))
+            Descuento = 50
+        elif marca_elegida == "ArgentinaLuz" and cantidad_elegida == 5:
+                Descuento = 40
+        elif not marca_elegida == "ArgentinaLuz" and cantidad_elegida == 5:
+                Descuento = 30
+        elif (marca_elegida == "ArgentinaLuz" or marca_elegida == "FelipeLamparas") and cantidad_elegida == 4:
+                Descuento = 25
+        elif (not marca_elegida == "ArgentinaLuz" or not marca_elegida == "FelipeLamparas") and cantidad_elegida == 4:
+                Descuento = 20
+        elif marca_elegida == "ArgentinaLuz" and cantidad_elegida == 3:
+                Descuento = 15
+        elif marca_elegida == "FelipeLamparas" and cantidad_elegida == 3:
+                Descuento = 10
+        elif (not marca_elegida == "ArgentinaLuz" and not marca_elegida == "FelipeLamparas") and cantidad_elegida == 3:
+            Descuento = 5
         else:
-            if marca_elegida == "ArgentinaLuz" and cantidad_elegida == 5:
-                #descuento 40%
-                Descuento = Precio_total * 0.40
-                #muestro total
-                Valor_con_Descuento = Precio_total - Descuento
-                alert(title= "UTN FRA", message= "¡Comprando 5 lamparitas ArgentinaLuz obtuvo un 40% de descuento! Su total es ${}".format(Valor_con_Descuento))
-            else:
-                if not marca_elegida == "ArgentinaLuz" and cantidad_elegida == 5:
-                    #descuento 30%
-                    Descuento = Precio_total * 0.30
-                    #muestro total
-                    Valor_con_Descuento = Precio_total - Descuento
-                    alert(title="UTN FRA", message= "¡Comprando 5 lamparitas {} obtuvo un 30% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                else:
-                    if marca_elegida == "ArgentinaLuz" and cantidad_elegida == 4 or marca_elegida == "FelipeLamparas" and cantidad_elegida == 4:
-                        Descuento = Precio_total * 0.25
-                        Valor_con_Descuento = Precio_total - Descuento
-                        alert(title="UTN FRA", message= "¡Comprando 4 lamparitas {} obtuvo un 25% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                    else:
-                        if not marca_elegida == "ArgentinaLuz" or not marca_elegida == "FelipeLamparas" and cantidad_elegida == 4:
-                            Descuento = Precio_total * 0.20
-                            Valor_con_Descuento = Precio_total - Descuento
-                            alert(title="UTN FRA", message= "¡Comprando 4 lamparitas {} obtuvo un 20% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                        else:
-                            if marca_elegida == "ArgentinaLuz" and cantidad_elegida == 3:
-                                Descuento = Precio_total * 0.15
-                                Valor_con_Descuento = Precio_total - Descuento
-                                alert(title="UTN FRA", message= "¡Comprando 3 lamparitas {} obtuvo un 15% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                            else:
-                                if marca_elegida == "FelipeLamparas" and cantidad_elegida == 3:
-                                    Descuento = Precio_total * 0.10
-                                    Valor_con_Descuento = Precio_total - Descuento
-                                    alert(title="UTN FRA", message= "¡Comprando 3 lamparitas {} obtuvo un 10% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                                else:
-                                    if not marca_elegida == "ArgentinaLuz" and not marca_elegida == "FelipeLamparas" and cantidad_elegida == 3:
-                                        Descuento = Precio_total * 0.05
-                                        Valor_con_Descuento = Precio_total - Descuento
-                                        alert(title="UTN FRA", message= "¡Comprando 3 lamparitas {} obtuvo un 5% de descuento! Su total es ${}".format(marca_elegida,Valor_con_Descuento))
-                                        
-        if Valor_con_Descuento > 4000:
-            Descuento = Valor_con_Descuento * 0.05
-            Valor_con_descuento_adicional = Valor_con_Descuento - Descuento
-            
-            alert(title="UTN FRA", message="¡Obtuvo un %5 mas de descuento por haber gastado más de $4000 pesos! Su total es {}".format(Valor_con_descuento_adicional))
-                                        
-        
-        #D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
+            alert(title="UTN FRA", message= "Su total es {}".format(Precio_total))
         
         
+        Valor_con_Descuento = (Precio_total * Descuento) / 100
+        Valor_Final = Precio_total - Valor_con_Descuento
+        alert ("UTN FRA", "¡Comprando {} lamparitas obtuvo un {}% de descuento! Su total es ${}".format(cantidad_elegida,Descuento,Valor_Final))
+        
+        if Valor_Final > 4000:
+            Descuento = (Valor_Final * 5) / 100
+            Valor_con_descuento_adicional = Valor_Final - Descuento
+        alert(title="UTN FRA", message="¡Obtuvo un %5 mas de descuento por haber gastado más de $4000 pesos! Su total es {}".format(Valor_con_descuento_adicional))
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
